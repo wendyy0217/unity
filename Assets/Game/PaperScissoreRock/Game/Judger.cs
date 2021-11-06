@@ -4,12 +4,18 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Judger : MonoBehaviour
 {
-    public Text aiPlayer = null;
-    public Text p1Player = null;
+    [SerializeField]//可以顯示在inspector裡但是不會被別人存取
+    private Text aiPlayer = null;
+    [SerializeField]
+    private Text p1Player = null;
+    [SerializeField]
+    private Text result = null;
+    public UIManager uiManager = null;//讓Judger知道UIManager也可以用UIManager
     public void init()
     {
         this.aiPlayer.text = "";
         this.p1Player.text = "";
+        this.result.text = "";
     }
     public void checkWin(int p1, int c2)
     {
@@ -19,7 +25,7 @@ public class Judger : MonoBehaviour
         //只計算玩家Ａ出剪刀，石頭，布的情況
         if (p1 - c2 == -2 || p1 - c2 == 1)
         {
-            result = "=>玩家Ａ獲勝";
+            result = "=>玩家獲勝";
         }
         else if (p1 == c2)
         {
@@ -27,13 +33,11 @@ public class Judger : MonoBehaviour
         }
         else
         {
-            result = "玩家Ａ失敗";
+            result = "電腦獲勝";
         }
-        Debug.Log(output + result);
-        Debug.Log("玩家A:" + (PSS.GuessingType)p1);
-        Debug.Log("玩家B:" + (PSS.GuessingType)c2);
-        Debug.Log(result);
         this.aiPlayer.text = "電腦:" + (PSS.GuessingType)c2;
         this.p1Player.text = "玩家:" + (PSS.GuessingType)p1;
+        this.result.text = result;
+        this.uiManager.onGameOver();
     }
 }

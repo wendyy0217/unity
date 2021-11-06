@@ -22,7 +22,15 @@ namespace PSS //用一個大資料夾將此script包起來，可以取與之前�
         {
             this.judger.checkWin(type, this.c2.action());
         }
-
+        public void quitGame()
+        {
+            Application.Quit();
+        }
+        public void restart()
+        {
+            this.uiManager.restart();
+            this.judger.init();
+        }
     }
     public class Computer
     {
@@ -37,4 +45,5 @@ namespace PSS //用一個大資料夾將此script包起來，可以取與之前�
         Rock = 2,
         Paper = 3
     }
+
 }
