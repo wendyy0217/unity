@@ -20,6 +20,7 @@ namespace PSS //用一個大資料夾將此script包起來，可以取與之前�
         }
         public void playerInput(int type)
         {
+            this.uiManager.setPlayerImage(type);
             this.judger.checkWin(type, this.c2.action());
         }
         public void quitGame()

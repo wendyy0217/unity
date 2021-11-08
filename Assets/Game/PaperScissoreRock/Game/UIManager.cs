@@ -5,15 +5,17 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public GameObject btnGroup;
-    public GameObject gameTitle;
-    public GameObject playButton;
-    public GameObject gameOver;
-    public GameObject restartButton;
-    public GameObject leaveButton;
-    public GameObject button0;
-    public GameObject button2;
-    public GameObject button5;
+    public GameObject btnGroup = null;
+    public GameObject gameTitle = null;
+    public GameObject playButton = null;
+    public GameObject gameOver = null;
+    public GameObject restartButton = null;
+    public GameObject leaveButton = null;
+    public GameObject button0 = null;
+    public GameObject button2 = null;
+    public GameObject button5 = null;
+    public Image targetImage = null;
+    public Sprite[] sprites = null;
     public void init()
     {
         this.gameOver.SetActive(false);
@@ -21,7 +23,8 @@ public class UIManager : MonoBehaviour
         this.leaveButton.SetActive(false);
         this.btnGroup.SetActive(false);
         this.gameTitle.SetActive(true);
-        this.playButton.SetActive(true);
+        this.playButton.SetActive(true);//.SetActive控制整個物件(包含功能)
+        this.targetImage.enabled = false;//.enabled控制影像ex. Image
     }
     public void gameStart()
     {
@@ -35,6 +38,7 @@ public class UIManager : MonoBehaviour
         this.restartButton.SetActive(true);
         this.leaveButton.SetActive(true);
         this.btnGroup.SetActive(false);
+        this.targetImage.enabled = true;
     }
     public void restart()
     {
@@ -42,6 +46,10 @@ public class UIManager : MonoBehaviour
         this.gameOver.SetActive(false);
         this.leaveButton.SetActive(false);
         this.restartButton.SetActive(false);
+        this.targetImage.enabled = false;
     }
-
+    public void setPlayerImage(int type)
+    {
+        this.targetImage.sprite = this.sprites[type - 1];
+    }
 }
