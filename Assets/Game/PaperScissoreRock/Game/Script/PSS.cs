@@ -21,7 +21,12 @@ namespace PSS //用一個大資料夾將此script包起來，可以取與之前�
         public void playerInput(int type)
         {
             this.uiManager.setPlayerImage(type);
-            this.judger.checkWin(type, this.c2.action());
+            int c_type = this.c2.action();
+            this.judger.checkWin(type,this.c2.action());
+            //Debug.Log("PSS type"+type);
+            //Debug.Log("PSS c2"+c2);
+            this.uiManager.setAIImage(c_type);
+
         }
         public void quitGame()
         {
@@ -35,6 +40,7 @@ namespace PSS //用一個大資料夾將此script包起來，可以取與之前�
     }
     public class Computer
     {
+
         public int action()
         {
             return Random.Range(1, 4);
