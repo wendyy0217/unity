@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class UIManager : MonoBehaviour
 {
     public GameObject btnGroup = null;
@@ -18,6 +19,7 @@ public class UIManager : MonoBehaviour
     public Image aiTargetImage=null;
     public Sprite[] sprites = null;
     public Sprite[] aiSprites=null;
+
     public void init()
     {
         this.gameOver.SetActive(false);
