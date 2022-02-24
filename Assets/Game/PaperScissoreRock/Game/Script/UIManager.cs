@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 
 public class UIManager : MonoBehaviour
@@ -16,10 +17,10 @@ public class UIManager : MonoBehaviour
     public GameObject button2 = null;
     public GameObject button5 = null;
     public Image targetImage = null;
-    public Image aiTargetImage=null;
+    public Image aiTargetImage = null;
     public Sprite[] sprites = null;
-    public Sprite[] aiSprites=null;
-
+    public Sprite[] aiSprites = null;
+    public Sprite pokerBack = null;
     public void init()
     {
         this.gameOver.SetActive(false);
@@ -29,7 +30,7 @@ public class UIManager : MonoBehaviour
         this.gameTitle.SetActive(true);
         this.playButton.SetActive(true);//.SetActive控制整個物件(包含功能)
         this.targetImage.enabled = false;//.enabled控制影像ex. Image
-        this.aiTargetImage.enabled=false;
+        this.aiTargetImage.enabled = false;
     }
     public void gameStart()
     {
@@ -37,16 +38,18 @@ public class UIManager : MonoBehaviour
         this.playButton.SetActive(false);
         this.btnGroup.SetActive(true);
         this.targetImage.enabled = true;//.enabled控制影像ex. Image
-        this.aiTargetImage.enabled=true;
+        this.aiTargetImage.enabled = true;
+        this.targetImage.sprite = this.pokerBack;
+        this.aiTargetImage.sprite = this.pokerBack;
     }
-    public void onGameOver()
+    private void onGameOver()
     {
         this.gameOver.SetActive(true);
         this.restartButton.SetActive(true);
         this.leaveButton.SetActive(true);
         this.btnGroup.SetActive(false);
         this.targetImage.enabled = true;
-        this.aiTargetImage.enabled=true;
+        this.aiTargetImage.enabled = true;
     }
     public void restart()
     {
@@ -54,17 +57,33 @@ public class UIManager : MonoBehaviour
         this.gameOver.SetActive(false);
         this.leaveButton.SetActive(false);
         this.restartButton.SetActive(false);
-        this.targetImage.enabled = false;
-         this.aiTargetImage.enabled=false;
+        this.gameStart();
     }
-    public void setPlayerImage(int type)
+    private void setPlayerImage(int type)
     {
         this.targetImage.sprite = this.sprites[type - 1];
-        Debug.Log("UIM type"+type);
+        Debug.Log("UIM type" + type);
     }
-    public void setAIImage(int c2)
+    private void setAIImage(int c2)
     {
-this.aiTargetImage.sprite = this.aiSprites[c2-1];
-Debug.Log("UIM c2"+c2);
+        this.aiTargetImage.sprite = this.aiSprites[c2 - 1];
+        Debug.Log("UIM c2" + c2);
+    }
+    public void showResult(int myType, int aiType, Judger.WinType winType)
+    {
+        DOTween.Sequence()
+            .Append(this.targetImage.transform.DOLocalRotate(new Vector3(0, 0, 0), 0))
+            .Append(this.targetImage.transform.DOLocalRotate(new Vector3(0, 90, 0), 0.5f))
+            .AppendCallback(() =>
+            {
+                this.setPlayerImage(myType);
+            })
+            .Append(this.targetImage.transform.DOLocalRotate(new Vector3(0, 180, 0), 0.5f))
+            .AppendCallback(() =>
+            {
+
+                this.onGameOver();
+                this.setAIImage(aiType);
+            });
     }
 }
