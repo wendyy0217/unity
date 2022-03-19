@@ -215,9 +215,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12ed6aa126dff495ba94dc7a8b236532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  board: {fileID: 0}
-  chess: 1
-  cam: {fileID: 2088175475}
 --- !u!1 &1173531447
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,7 +244,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91511306599654aee9cb66715eb24200, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  board: {fileID: 0}
 --- !u!4 &1173531449
 Transform:
   m_ObjectHideFlags: 0
@@ -329,9 +325,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 1414258572}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0e93c612a6e54d3697362b56152e8fb, type: 3}
+  m_Script: {fileID: 11500000, guid: 6efdf065ad7f7447bb8d486db139a174, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  btnGroup: {fileID: 0}
+  gameTitle: {fileID: 0}
+  playButton: {fileID: 0}
+  gameOver: {fileID: 0}
+  restartButton: {fileID: 0}
+  leaveButton: {fileID: 0}
+  button0: {fileID: 0}
+  button2: {fileID: 0}
+  button5: {fileID: 0}
+  targetImage: {fileID: 0}
+  aiTargetImage: {fileID: 0}
+  sprites: []
+  aiSprites: []
+  pokerBack: {fileID: 0}
 --- !u!1 &2088175473
 GameObject:
   m_ObjectHideFlags: 0
