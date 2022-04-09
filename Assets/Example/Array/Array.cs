@@ -3,39 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Array : MonoBehaviour
+public class Average : MonoBehaviour
 {
     public InputField input;
     private int[] number = new int[5];
     private int index = 0;
     private string outputNum;
-    void Start()
-    {
-        // int num = int.Parse(this.input.text);
 
-
-        // int total = 0;
-        // int average = 0;
-        // //number[0] = 10;
-        // //number[1] = 20;
-        // //number[2] = 30;
-        // //number[3] = 40;
-        // //number[4] = 50;
-
-        // for (int i = 0; i < 5; i++)
-        // {
-        //     total += number[i];
-        // }
-        // average = total / 5;
-        // Debug.Log(average);
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     public void inputNum()
     {
         string output = "";
@@ -55,12 +29,6 @@ public class Array : MonoBehaviour
         average = number[0] + number[1] + number[2] + number[3] + number[4];
         averageNumber = average / 5;
         Debug.Log(averageNumber);
-
-        // int total =0;
-        // for(int i =0;i<5;i++){
-        //     total += number[i];
-        // }
-        // Debug.Log(total/5);
     }
 
 }

@@ -98,7 +98,7 @@ public class OneaTwob : MonoBehaviour
     public void restartButtom()
     {
         this.tipsOutput.text = null;
-        
+
         Start();
     }
 }

@@ -10,12 +10,6 @@ public class DoTweenMain : MonoBehaviour
 
     void Start()
     {
-        //Tween myTween = this.sprite.transform.DOMoveX(3, 0);
         Tween myTween2 = this.sprite.transform.DOLocalRotate(new Vector3(0, 200, 0), 1);
-    }
-
-    void Update()
-    {
-
     }
 }
