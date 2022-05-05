@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class StudentMain : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
         Student s1 = new Student(10201, "小山");
@@ -21,11 +20,5 @@ public class StudentMain : MonoBehaviour
         s2.score = 65;
         Student.passScore =40;
         Debug.Log(Student.passScore);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

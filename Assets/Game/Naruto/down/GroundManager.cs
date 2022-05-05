@@ -27,8 +27,5 @@ public class GroundManage : MonoBehaviour
         {
             return Random.Range(top, buttom);
         }
-        void Update()
-        {
-        }
     }
 }

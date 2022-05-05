@@ -14,7 +14,7 @@ public class CutString : MonoBehaviour
         int index = Random.Range(0, this.content.Length-1); //index是隨機產生0~字串長度的一個數
        
         //如果字串第index個字元是空格或.，str=字串的第0個字元到第index個，如果index =字串的總長度，str=字串
-       if (this.content[index] == ' ' || this.content[index] == '.'||index == this.content.Length)
+       if (this.content[index] == ' ' || this.content[index] == '.'||index == this.content.Length-1)
         {
             str = this.content.Substring(0, index);
         }

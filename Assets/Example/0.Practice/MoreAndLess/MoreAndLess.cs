@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class more : MonoBehaviour
 {
     public InputField input;
-    private int index = 0;
     public Text result = null;
     public Text infor = null;
     List<int> list = new List<int>();//動態陣列宣告
@@ -63,7 +62,7 @@ public class more : MonoBehaviour
         string output = "";
         for (int i = 0; i < a.Count; i++)
         {
-            output += a[i]+" ";
+            output += a[i] + " ";
         }
         this.result.text = output;
     }
@@ -75,7 +74,7 @@ public class more : MonoBehaviour
         string output = "";
         for (int i = 0; i < list.Count; i++)
         {
-            output += list[i]+" ";
+            output += list[i] + " ";
         }
         this.result.text = output;
     }

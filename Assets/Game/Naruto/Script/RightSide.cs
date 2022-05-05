@@ -13,13 +13,14 @@ public class RightSide : MonoBehaviour
     // 子彈碰到右邊之後消失
     void Update()
     {
-        void OnTriggerEnter2D(Collider2D col)
+
+    }
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.tag == "missile" || col.tag == "Player")
         {
-            if (col.tag == "missile"||col.tag=="Player")
-            {
-                Destroy(col.gameObject);
-                
-            }
+            Destroy(col.gameObject);
+
         }
     }
 }

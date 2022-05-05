@@ -204,8 +204,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1148848042}
-        m_MethodName: stringCut
-        m_Mode: 5
+        m_MethodName: buttonClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -677,8 +677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c77a18d6557cc4e919ed73444350cdc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  input: As soon as possible.
-  output: 
+  input: {fileID: 302284630}
 --- !u!4 &1148848043
 Transform:
   m_ObjectHideFlags: 0

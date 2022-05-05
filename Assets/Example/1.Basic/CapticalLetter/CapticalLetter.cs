@@ -6,17 +6,6 @@ using UnityEngine.UI;
 public class CapticalLetter : MonoBehaviour
 {
     public InputField input;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public void test()
     {
